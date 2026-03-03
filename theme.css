@@ -1,0 +1,103 @@
+:root {
+    /* 'Helvetica' meant to refer to the Chicago95 Pixel-Microsoft-Sans typeface */
+    /* Remove it if you have Adobe Helvetica. */
+    --font-sans: Helvetica, 'MS Sans Serif', sans-serif;
+    --font-mono: 'Lucida Console', 'Courier New', monospace;
+
+    --native-titlebar-height: calc(18px + 2px);
+    --spacing-3: 2px;
+}
+
+* { border-radius: 0px !important; }
+
+body, .NativeTitlebar\.module__titlebar___ZWZkOD {
+    border: solid 2px var(--bg-secondary);
+    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
+}
+
+/* titlebar  */
+.NativeTitlebar\.module__titlebar___ZWZkOD {
+    border-bottom-style: none;
+    background: linear-gradient(to right, #08256b, #a5cef7);
+}
+
+.NativeTitlebar\.module__controls___ZWZkOD {
+    gap: 1px;
+}
+
+.NativeTitlebar\.module__left___ZWZkOD svg {
+    height: 10px;
+    left: -2px;
+    position: relative;
+}
+
+.NativeTitlebar\.module__left___ZWZkOD::before {
+    content: url('https://fluxerstatic.com/web/favicon-16x16.png');
+    left: 2px;
+    top: 2px;
+    position: relative;
+}
+
+[type="button"]:not([role="radio"]):active {
+    border-style: inset;
+}
+
+.NativeTitlebar\.module__controls___ZWZkOD button {
+    background: var(--bg-secondary);
+}
+
+.NativeTitlebar\.module__wordmark___ZWZkOD {
+    color: white;
+}
+
+.NativeTitlebar\.module__left___ZWZkOD {
+    opacity: 1;
+}
+
+.NativeTitlebar\.module__controlButton___ZWZkOD {
+    width: 16px;
+    height: 14px;
+    border: 2px outset var(--bg-secondary);
+    position: relative;
+    cursor: default;
+}
+
+.NativeTitlebar\.module__controlButton___ZWZkOD svg {
+    height: 10px;
+    left: -3px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Minimize window"]::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -4px;
+    content: "0";
+}
+
+.NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -4px;
+    content: "1";
+}
+
+.NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -4px;
+    content: "2";
+}
+
+
+.NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -4px;
+    content: "r";
+}
