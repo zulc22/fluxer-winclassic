@@ -1,0 +1,264 @@
+:root {
+    /* 'Helvetica' meant to refer to the Chicago95 Pixel-Microsoft-Sans typeface */
+    --font-sans: Helvetica, 'MS Sans Serif', sans-serif;
+    --font-mono: 'Lucida Console', 'Courier New', monospace;
+
+    --native-titlebar-height: calc(18px + 2px);
+    --spacing-3: 2px;
+}
+
+* {
+    border-radius: 0px !important;
+}
+
+.Button\.module__button___Yzg1Yz {
+    border: solid 2px var(--bg-secondary);
+    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
+}
+
+body,
+.NativeTitlebar\.module__titlebar___ZWZkOD {
+    border: solid 2px var(--bg-secondary);
+    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
+}
+
+/* titlebar  */
+.NativeTitlebar\.module__titlebar___ZWZkOD {
+
+    border-bottom-style: none;
+    background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+    opacity: 1;
+
+    .NativeTitlebar\.module__controls___ZWZkOD {
+        gap: 1px;
+
+        button {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        :hover {
+            background: var(--bg-primary) !important;
+            color: var(--text-primary) !important;
+        }
+
+        .NativeTitlebar\.module__controlButton___ZWZkOD {
+            width: 16px;
+            height: 14px;
+            border: 2px outset var(--bg-secondary);
+            position: relative;
+            cursor: default;
+
+            svg {
+                height: 10px;
+                left: -3px;
+                position: absolute;
+                visibility: hidden;
+            }
+
+            &[aria-label="Minimize window"]::before {
+                font-family: Marlett;
+                font-size: 12px;
+                position: relative;
+                top: -3px;
+                content: "0";
+            }
+
+            &[aria-label="Maximize window"]::before {
+                font-family: Marlett;
+                font-size: 12px;
+                position: relative;
+                top: -3px;
+                content: "1";
+            }
+
+            &[aria-label="Restore window"]::before {
+                font-family: Marlett;
+                font-size: 12px;
+                position: relative;
+                top: -3px;
+                content: "2";
+            }
+
+            &[aria-label="Close window"]::before {
+                font-family: Marlett;
+                font-size: 12px;
+                position: relative;
+                top: -3px;
+                content: "r";
+            }
+        }
+
+    }
+
+    .NativeTitlebar\.module__wordmark___ZWZkOD {
+        color: var(--text-on-brand-primary);
+        transform: skew(-10deg, 0deg) scaleY(0.8);
+        right: 18px;
+
+        &::before {
+            content: url('https://fluxerstatic.com/web/favicon-16x16.png');
+            left: 2px;
+            top: 2px;
+            position: relative;
+        }
+    }
+
+}
+
+
+[type="button"]:not([role="radio"]):active {
+    border-style: inset;
+}
+
+/* file attachment icon */
+
+.AttachmentFile\.module__iconContainer___XzUxYj {
+    background-color: transparent;
+
+    &::before {
+        content: data-uri(w98_file_windows.png);
+        height: 48px;
+    }
+
+    svg {
+        visibility: hidden;
+    }
+}
+
+/* file attachment styling */
+
+.AttachmentFile\.module__fileName___XzUxYj::before {
+    content: "Sent: ";
+    font-weight: normal;
+}
+
+.AttachmentFile\.module__attachmentContainer___XzUxYj {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.AttachmentFile\.module__deleteButton___XzUxYj {
+    border: 2px outset;
+    background-color: var(--background-primary);
+
+    &:hover {
+        background: var(--background-primary);
+    }
+
+    &::before {
+        content: data-uri(wme_delete.png);
+        position: relative;
+        left: 3px;
+        top: 3px;
+    }
+
+    &:active::before {
+        left: 4px;
+        top: 4px;
+    }
+
+    svg {
+        visibility: hidden;
+    }
+}
+
+.AttachmentFile\.module__downloadButton___XzUxYj {
+    flex-basis: 100%;
+    background: transparent;
+    justify-content: left;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+        background: transparent;
+    }
+
+    &::before {
+        content: data-uri(w98_download.png);
+        height: 16px;
+        margin-right: 4px;
+    }
+
+    &::after {
+        content: "Download this file";
+        color: var(--text-link);
+        text-decoration: underline;
+    }
+
+    svg {
+        display: none;
+    }
+}
+
+/* image button */
+
+.MediaContainer\.module__actionButton___XzY2ZW:hover {
+    transform: none;
+}
+
+.Divider\.module__line___XzVjNm {
+    border: inset 1px;
+}
+
+.GuildsLayout\.module__addGuildButtonIcon___XzkwZG {
+
+    &:has(.DiscoveryButton\.module__iconText___ZjlkNW) {
+        svg {
+            display: none;
+        }
+
+        &::before {
+            content: data-uri(w98_channels_32.png);
+            display: block;
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+    &:has(.HelpButton\.module__iconText___XzhjYj) {
+        svg {
+            display: none;
+        }
+
+        &::before {
+            content: data-uri(w98_help_question_mark.png);
+            display: block;
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+    &:has(.DownloadButton\.module__button___XzQwMj) {
+        svg {
+            display: none;
+        }
+
+        &::before {
+            content: data-uri(w98_help_question_mark.png);
+            display: block;
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+}
+
+.Message\.module__systemMessageIconWrapper___XzQ1Zj {
+    &:has(.GuildJoinMessage\.module__icon___XzM3NW) {
+        svg {
+            display: none;
+        }
+
+        &::before {
+            content: data-uri(wme_forward.png);
+            display: block;
+            height: 16px;
+            width: 16px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+/* ==UserStyle==
+@name       fluxer-winclassic
+@license    MIT
+@namespace  zulc22.site
+@version    0.0.0
+==/UserStyle== */
