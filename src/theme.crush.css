@@ -17,17 +17,22 @@
 }
 
 body,
-.NativeTitlebar\.module__titlebar___ZWZkOD {
+.NativeTitlebar\.module__titlebar___ZWZkOD,
+.Modal\.module__layer___XzA4MW {
     border: solid 2px var(--bg-secondary);
     border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
 }
 
-/* titlebar  */
+.Modal\.module__modalBackdrop___XzA4MW {
+    background: data-uri(dither-background.png);
+    opacity: 1;
+}
+
+/* titlebar */
 .NativeTitlebar\.module__titlebar___ZWZkOD {
 
     border-bottom-style: none;
     background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
-    opacity: 1;
 
     .NativeTitlebar\.module__controls___ZWZkOD {
         gap: 1px;
@@ -91,10 +96,13 @@ body,
 
     }
 
-    .NativeTitlebar\.module__wordmark___ZWZkOD {
-        color: var(--text-on-brand-primary);
-        transform: skew(-10deg, 0deg) scaleY(0.8);
-        right: 18px;
+    .NativeTitlebar\.module__left___ZWZkOD {
+        opacity: 1;
+
+        .NativeTitlebar\.module__wordmark___ZWZkOD {
+            color: var(--text-on-brand-primary);
+            transform: skew(-10deg, 0deg) scaleY(0.8) translateY(-1px);
+        }
 
         &::before {
             content: url('https://fluxerstatic.com/web/favicon-16x16.png');
@@ -261,4 +269,39 @@ body,
             width: 16px;
         }
     }
+}
+
+.SettingsModalLayout\.module__sidebarNavContent___XzU3Zj {
+    box-sizing: border-box;
+
+    .SettingsModalLayout\.module__sidebarCategoryTitle___XzU3Zj {
+        text-transform: none;
+        color: var(--text-primary);
+        font-weight: normal;
+        border-bottom: var(--background-tertiary) 1px solid;
+        padding-bottom: 0;
+        margin-bottom: 6px;
+    }
+
+    .SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
+        background: var(--brand-primary);
+        color: var(--text-on-brand-primary);
+
+        svg {
+            color: inherit;
+        }
+    }
+}
+
+/* .SettingsModalLayout\.module__desktopSidebar___XzU3Zj {
+    border-right-style: double;
+    border-right-width: 3px;
+} */
+
+.Input\.module__input___ZGQ3MT {
+    padding: 3px 4px;
+}
+
+.Input\.module__input___ZGQ3MT.Input\.module__minHeight___ZGQ3MT {
+    min-height: 18px;
 }
