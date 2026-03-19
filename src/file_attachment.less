@@ -1,0 +1,90 @@
+@import "common.less";
+
+/* file attachment icon */
+
+.AttachmentFile\.module__iconContainer___XzUxYj {
+  background-color: transparent;
+
+  &::before {
+    content: data-uri("graphics/w98_file_windows.png");
+    height: 48px;
+  }
+
+  svg {
+    visibility: hidden;
+  }
+}
+
+/* file attachment styling */
+
+.AttachmentFile\.module__fileName___XzUxYj::before {
+  content: "Sent: ";
+  font-weight: normal;
+}
+
+.AttachmentFile\.module__attachmentContainer___XzUxYj {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.AttachmentFile\.module__deleteButton___XzUxYj {
+  .COMMON_BORDER_OUT();
+
+  &:hover {
+    .COMMON_BORDER_OUT();
+  }
+
+  &::before {
+    content: data-uri("graphics/wme_delete.png");
+    position: relative;
+    top: 3px;
+  }
+
+  &:active {
+    .COMMON_BORDER_IN();
+  }
+
+  &:active::before {
+    left: 1px;
+    top: 4px;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+// "Download this file" text below sent files
+// inspo. MSN Messenger, Microsoft download sites
+.AttachmentFile\.module__downloadButton___XzUxYj {
+  flex-basis: 100%;
+  background: transparent;
+  justify-content: left;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &::before {
+    content: data-uri("graphics/w98_download.png");
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  &::after {
+    content: "Download this file";
+    color: var(--text-link);
+    text-decoration: underline;
+  }
+
+  svg {
+    display: none;
+  }
+}

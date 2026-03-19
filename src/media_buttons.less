@@ -1,0 +1,58 @@
+@import "common.less";
+
+.MediaContainer\.module__mediaHoverAction___XzY2ZW {
+  .MediaContainer\.module__actionButton___XzY2ZW {
+    &:hover {
+      transform: none;
+    }
+
+    .COMMON_BORDER_OUT();
+
+    &.MediaContainer\.module__deleteButton___XzY2ZW {
+      .REPLACE_SVG("graphics/wme_delete.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: 0;
+      }
+    }
+
+    &[aria-label="Download"] {
+      .REPLACE_SVG("graphics/w98_download.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: 0;
+      }
+    }
+
+    &[aria-label="Add to favorites"] {
+      .REPLACE_SVG("graphics/favorite_empty.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: -1px;
+      }
+      &:active::before {
+        top: 0px;
+      }
+    }
+
+    &[aria-label="Remove from favorites"] {
+      .REPLACE_SVG("graphics/favorite.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: -1px;
+      }
+      &:active::before {
+        top: 0px;
+      }
+    }
+
+    &:active {
+      .COMMON_BORDER_IN();
+
+      &::before {
+        left: 1px;
+        top: 1px;
+      }
+    }
+  }
+}

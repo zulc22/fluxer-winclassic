@@ -1,0 +1,113 @@
+@import "common.less";
+
+.SettingsModalLayout\.module__sidebarNavContent___XzU3Zj {
+  box-sizing: border-box;
+
+  .SettingsModalLayout\.module__sidebarCategoryTitle___XzU3Zj {
+    text-transform: none;
+    color: var(--text-primary);
+    font-weight: normal;
+    border-bottom: var(--bg-tertiary) 1px solid;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+  }
+
+  .SettingsModalLayout\.module__sidebarItem___XzU3Zj,
+  .SettingsModalLayout\.module__sidebarSubItem___XzU3Zj {
+    display: flex;
+    align-items: center;
+    background: var(--bg-primary);
+    font-size: 14px;
+    height: 24px;
+
+    &:active {
+      border: none;
+    }
+
+    &.SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj,
+    &.SettingsModalLayout\.module__sidebarSubItemActive___XzU3Zj {
+      background: var(--brand-primary);
+      color: var(--text-on-brand-primary);
+
+      svg {
+        color: inherit;
+      }
+    }
+  }
+
+  .SettingsModalLayout\.module__sidebarSubItems___XzU3Zj {
+    border-left: 1px dotted black;
+    position: relative;
+
+    &::before {
+      // content: data-uri("graphics/tree_expand.png");
+      // left: -5px;
+      // background: none;
+      // z-index: 2;
+      background: none;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 10px;
+      bottom: 0px;
+      left: -1px;
+      background: var(--bg-primary);
+      content: "";
+      z-index: 1;
+    }
+
+    .SettingsModalLayout\.module__sidebarSubItem___XzU3Zj {
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 50%;
+        width: 11px;
+        left: -11px;
+        height: 1px;
+        border-top: 1px dotted black;
+        content: "";
+        z-index: 1;
+      }
+    }
+  }
+
+  #settings-tab-my_profile {
+    .REPLACE_SVG("graphics/naserv_user.png", 16, 16);
+  }
+
+  #settings-tab-account_security {
+    .REPLACE_SVG("graphics/sdvdopt_lockkey.png", 16, 16);
+  }
+
+  #settings-tab-plutonium {
+    .REPLACE_SVG("graphics/netcplc_fav_16.png", 16, 16);
+  }
+
+  #settings-tab-gift_inventory {
+    .REPLACE_SVG("graphics/ackage_16.png", 16, 16);
+  }
+
+  #settings-tab-blocked_users {
+    .REPLACE_SVG("graphics/o_16.png", 16, 16);
+  }
+
+  #settings-tab-devices {
+    .REPLACE_SVG("graphics/obsync_16.png", 16, 16);
+  }
+
+  #settings-tab-linked_accounts {
+    .REPLACE_SVG("graphics/ab_book_16.png", 16, 16);
+  }
+
+  #settings-tab-appearance {
+    .REPLACE_SVG("graphics/spaint_brush.png", 16, 16);
+  }
+}
+
+/* .SettingsModalLayout\.module__desktopSidebar___XzU3Zj {
+    border-right-style: double;
+    border-right-width: 3px;
+} */

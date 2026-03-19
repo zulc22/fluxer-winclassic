@@ -1,0 +1,122 @@
+@import "common.less";
+
+@brand-gradient: linear-gradient(
+  to right,
+  var(--brand-primary),
+  var(--brand-secondary)
+);
+
+.COMMON_BORDER_OUT() {
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary)
+    var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+  background: var(--bg-secondary);
+}
+
+.COMMON_BORDER_IN() {
+  .COMMON_BORDER_OUT();
+  border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary)
+    var(--bg-tertiary);
+  background: var(--bg-primary);
+}
+
+.FOCUS_WITHIN_OUTLINE(@dotted: true) {
+  @outset: if(@dotted, 3px, 2px);
+
+  overflow: visible;
+
+  &:focus-within {
+    .COMMON_BORDER_IN();
+  }
+
+  &:focus-within::after {
+    position: absolute;
+    content: "";
+    z-index: 999;
+    top: -@outset;
+    left: -@outset;
+    right: -@outset;
+    bottom: -@outset;
+    border: if(@dotted, 1px dotted black, 1px solid black);
+  }
+}
+
+.FOCUS_OUTLINE(@dotted: true) {
+  @outset: if(@dotted, 3px, 2px);
+
+  overflow: visible;
+
+  &:focus {
+    .COMMON_BORDER_IN();
+  }
+
+  &:focus::after {
+    position: absolute;
+    content: "";
+    z-index: 999;
+    top: -@outset;
+    left: -@outset;
+    right: -@outset;
+    bottom: -@outset;
+    border: if(@dotted, 1px dotted black, 1px solid black);
+  }
+}
+
+.MARLETT_BUTTON(@text) {
+  width: 16px;
+  height: 14px;
+  .COMMON_BORDER_OUT();
+  position: relative;
+  cursor: default;
+  color: var(--text-primary);
+  opacity: 1;
+  &::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -3px;
+    content: @text;
+  }
+  &:hover {
+    color: var(--text-primary);
+  }
+  &:active {
+    .COMMON_BORDER_IN();
+    &::before {
+      left: 1px;
+      top: -2px;
+    }
+  }
+}
+
+.MINIMIZE_BUTTON() {
+  .MARLETT_BUTTON("0");
+}
+
+.MAXIMIZE_BUTTON() {
+  .MARLETT_BUTTON("1");
+}
+
+.RESTORE_BUTTON() {
+  .MARLETT_BUTTON("2");
+}
+
+.CLOSE_BUTTON() {
+  .MARLETT_BUTTON("r");
+}
+
+.REPLACE_SVG(@file_path, @width: 32px, @height: 32px) {
+  svg {
+    display: none;
+  }
+
+  &::before {
+    position: relative;
+    content: data-uri(@file_path);
+    display: block;
+    width: @width;
+    height: @height - (@height / 2);
+    top: 50%;
+  }
+}

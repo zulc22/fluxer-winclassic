@@ -1,0 +1,14 @@
+@import "common.less";
+
+// Divider
+.Divider\.module__line___XzVjNm {
+  border: solid var(--bg-tertiary) 1px;
+}
+
+// System messages
+.Message\.module__systemMessageIconWrapper___XzQ1Zj {
+  // -> User has joined
+  &:has(.GuildJoinMessage\.module__icon___XzM3NW) {
+    .REPLACE_SVG("graphics/wme_forward.png", 16, 16);
+  }
+}

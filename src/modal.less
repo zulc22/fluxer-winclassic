@@ -1,0 +1,77 @@
+@import "common.less";
+
+.Modal\.module__layer___XzA4MW {
+  .COMMON_BORDER_OUT();
+  background: none;
+}
+
+.Modal\.module__root___XzA4MW {
+  .COMMON_BORDER_OUT();
+
+  .Modal\.module__description___XzA4MW {
+    @icon-offset: 32px + 19px;
+    margin-left: @icon-offset + 11px;
+    position: relative;
+    color: var(--text-primary);
+    &::before {
+      position: absolute;
+      left: -@icon-offset;
+      content: data-uri("graphics/msg_warning.png");
+    }
+  }
+
+  .Modal\.module__header___XzA4MW {
+    background: @brand-gradient;
+    color: var(--text-on-brand-primary);
+    height: 2rem;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    padding-top: 6px;
+
+    .Modal\.module__headerInner___XzA4MW {
+      .Modal\.module__headerText___XzA4MW h3 {
+        color: inherit;
+      }
+      button[aria-label="Close"] {
+        .CLOSE_BUTTON();
+        svg {
+          display: none;
+        }
+        &::before {
+          top: 1px;
+        }
+        &:active::before {
+          top: 2px;
+        }
+      }
+    }
+  }
+
+  .SettingsModalHeader\.module__headerTransition___XzhlMD {
+    background: @brand-gradient !important;
+    color: var(--text-on-brand-primary);
+    height: 2rem;
+    padding: 0 16px;
+
+    h1 {
+      color: inherit;
+    }
+    button[aria-label="Close"] {
+      .CLOSE_BUTTON();
+      svg {
+        display: none;
+      }
+      &::before {
+        top: 1px;
+      }
+      &:active::before {
+        top: 2px;
+      }
+    }
+  }
+}
+
+.Modal\.module__modalBackdrop___XzA4MW,
+.MediaModal\.module__modalBackdrop___XzMyYj {
+  background: data-uri("graphics/dither-background.png");
+}
