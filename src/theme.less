@@ -47,6 +47,27 @@
   }
 }
 
+.FOCUS_OUTLINE(@dotted: true) {
+  @outset: if(@dotted, 3px, 2px);
+
+  overflow: visible;
+
+  &:focus {
+    .COMMON_BORDER_IN();
+  }
+
+  &:focus::after {
+    position: absolute;
+    content: "";
+    z-index: 999;
+    top: -@outset;
+    left: -@outset;
+    right: -@outset;
+    bottom: -@outset;
+    border: if(@dotted, 1px dotted black, 1px solid black);
+  }
+}
+
 .MARLETT_BUTTON(@text) {
   width: 16px;
   height: 14px;
@@ -142,6 +163,29 @@
         &:active::before {
           top: 2px;
         }
+      }
+    }
+  }
+
+  .SettingsModalHeader\.module__headerTransition___XzhlMD {
+    background: @brand-gradient !important;
+    color: var(--text-on-brand-primary);
+    height: 2rem;
+    padding: 0 16px;
+
+    h1 {
+      color: inherit;
+    }
+    button[aria-label="Close"] {
+      .CLOSE_BUTTON();
+      svg {
+        display: none;
+      }
+      &::before {
+        top: 1px;
+      }
+      &:active::before {
+        top: 2px;
       }
     }
   }
@@ -379,13 +423,51 @@
     margin-bottom: 6px;
   }
 
-  .SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
-    background: var(--brand-primary);
-    color: var(--text-on-brand-primary);
+  .SettingsModalLayout\.module__sidebarItem___XzU3Zj {
+    background: var(--bg-primary);
+    font-size: 14px;
+    height: 24px;
 
-    svg {
-      color: inherit;
+    &:active {
+      border: none;
     }
+
+    &.SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
+      background: var(--brand-primary);
+      color: var(--text-on-brand-primary);
+
+      svg {
+        color: inherit;
+      }
+    }
+  }
+
+  #settings-tab-my_profile {
+    .REPLACE_SVG("rnaserv_user.png", 16, 16);
+  }
+
+  #settings-tab-account_security {
+    .REPLACE_SVG("msdvdopt_lockkey.png", 16, 16);
+  }
+
+  #settings-tab-plutonium {
+    .REPLACE_SVG("inetcplc_fav_16.png", 16, 16);
+  }
+
+  #settings-tab-gift_inventory {
+    .REPLACE_SVG("package_16.png", 16, 16);
+  }
+
+  #settings-tab-blocked_users {
+    .REPLACE_SVG("no_16.png", 16, 16);
+  }
+
+  #settings-tab-devices {
+    .REPLACE_SVG("mobsync_16.png", 16, 16);
+  }
+
+  #settings-tab-linked_accounts {
+    .REPLACE_SVG("wab_book_16.png", 16, 16);
   }
 }
 
@@ -397,12 +479,43 @@
 .Input\.module__input___ZGQ3MT {
   padding: 3px 4px;
   .COMMON_BORDER_IN();
+  background: var(--bg-primary) !important;
 
   &.Input\.module__minHeight___ZGQ3MT {
     min-height: 22px;
   }
 
-  .FOCUS_WITHIN_OUTLINE();
+  &:focus {
+    .COMMON_BORDER_IN() !important;
+  }
+}
+
+.Input\.module__textareaWrapper___ZGQ3MT {
+  .COMMON_BORDER_IN();
+  background: var(--bg-primary) !important;
+
+  &.Input\.module__minHeight___ZGQ3MT {
+    min-height: 22px;
+  }
+
+  &:focus {
+    .COMMON_BORDER_IN() !important;
+  }
+
+  .BioEditor\.module__emojiButton___XzMxOW {
+    width: 20px;
+    height: 20px;
+    .COMMON_BORDER_OUT();
+    .REPLACE_SVG("winmine_smile_16.png", 16, 16);
+    &::before {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .Input\.module__textarea___ZGQ3MT {
+    padding: 3px 4px;
+  }
 }
 
 .ColorPickerField\.module__inputWrapper___XzAyOD {
@@ -415,11 +528,23 @@
     font-size: 13px;
   }
 
+  .ColorPickerField\.module__swatchButton___XzAyOD {
+    &:active {
+      border: none;
+    }
+    .REPLACE_SVG("mspaint_dropper.png", 16, 16);
+    &::before {
+      position: relative;
+      top: 2px;
+    }
+  }
+
   .FOCUS_WITHIN_OUTLINE();
 }
 
 .UserArea\.module__controlsContainer___XzEyMT {
   .UserArea\.module__controlButton___XzEyMT {
+    .COMMON_BORDER_OUT();
     position: relative;
 
     .CB_REPLACE_SVG(@file_path) {
