@@ -1,5 +1,14 @@
 @import "common.less";
 
+.GuildsLayout.module__guildListItem___XzkwZG {
+  .GuildsLayout\.module__relative___XzkwZG {
+    .COMMON_BORDER_OUT();
+  }
+  &[aria-pressed="true"] .GuildsLayout\.module__relative___XzkwZG {
+    .COMMON_BORDER_IN();
+  }
+}
+
 // included guild icons (add, discover, ...)
 .GuildsLayout\.module__addGuildButtonIcon___XzkwZG {
   button&:active {
@@ -15,17 +24,17 @@
   // Discover
   &:has(.DiscoveryButton\.module__iconText___ZjlkNW),
   &:has(.DiscoveryButton\.module__iconTextSelected___ZjlkNW) {
-    .REPLACE_SVG("graphics/98_channels_32.png");
+    .REPLACE_SVG("graphics/w98_channels_32.png");
   }
 
   // Help
   &:has(.HelpButton\.module__iconText___XzhjYj),
   &:has(.HelpButton\.module__iconTextSelected___XzhjYj) {
-    .REPLACE_SVG("graphics/98_help_book_big.png");
+    .REPLACE_SVG("graphics/w98_help_book_big.png");
   }
 
   // Download
   &:has(.DownloadButton\.module__iconText___XzQwMj) {
-    .REPLACE_SVG("graphics/etup_32.png");
+    .REPLACE_SVG("graphics/setup_32.png");
   }
 }

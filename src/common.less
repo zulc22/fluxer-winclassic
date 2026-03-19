@@ -106,17 +106,28 @@
   .MARLETT_BUTTON("r");
 }
 
-.REPLACE_SVG(@file_path, @width: 32px, @height: 32px) {
+.REPLACE_SVG(@file_path, @width: 32px, @height: 32px, @position_fix_attempt: true) {
   svg {
     display: none;
   }
 
-  &::before {
+  ._b() when (@position_fix_attempt = true) {
     position: relative;
-    content: data-uri(@file_path);
-    display: block;
     width: @width;
     height: @height - (@height / 2);
     top: 50%;
+    display: block;
+  }
+
+  ._b() when (@position_fix_attempt = false) {
+    position: relative;
+    width: @width;
+    height: @height;
+    display: block;
+  }
+
+  &::before {
+    ._b();
+    content: data-uri(@file_path);
   }
 }

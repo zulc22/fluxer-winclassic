@@ -1,0 +1,54 @@
+@import "common.less";
+
+.BaseAvatar\.module__container___XzZkNT {
+  svg {
+    border-radius: 0;
+    image {
+      mask-image: none;
+    }
+  }
+
+  &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Online"]) {
+    .BaseAvatar\.module__statusContainer___XzZkNT {
+      display: none !important;
+    }
+  }
+
+  &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Idle"]) {
+    .BaseAvatar\.module__statusContainer___XzZkNT {
+      // THANK YOUUUU https://stackoverflow.com/a/6810937
+      .REPLACE_SVG("graphics/msn_idle.png", 10px, 10px, false);
+      border: none;
+      border-radius: 50% !important;
+      box-shadow:
+        0 0 0 1px white,
+        1px 1px 0 1px black;
+      outline-color: transparent;
+    }
+  }
+
+  &:has(
+    .BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Do Not Disturb"]
+  ) {
+    .BaseAvatar\.module__statusContainer___XzZkNT {
+      // THANK YOUUUU https://stackoverflow.com/a/6810937
+      .REPLACE_SVG("graphics/msn_dnd.png", 10px, 10px, false);
+      border: none;
+      border-radius: 50% !important;
+      box-shadow:
+        0 0 0 1px white,
+        1px 1px 0 1px black;
+      outline-color: transparent;
+    }
+  }
+
+  &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Invisible"]),
+  &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Offline"]) {
+    .BaseAvatar\.module__statusContainer___XzZkNT {
+      display: none !important;
+    }
+    svg {
+      filter: grayscale(100%);
+    }
+  }
+}

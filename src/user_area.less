@@ -1,36 +1,40 @@
 @import "common.less";
 
+.CB_REPLACE_SVG(@file_path) {
+  .REPLACE_SVG(@file_path, 16, 16);
+  &::before {
+    position: relative;
+    top: 2px;
+  }
+}
+
 .UserArea\.module__controlsContainer___XzEyMT {
   .UserArea\.module__controlButton___XzEyMT {
     .COMMON_BORDER_OUT();
     position: relative;
 
-    .CB_REPLACE_SVG(@file_path) {
-      .REPLACE_SVG(@file_path, 16, 16);
-      &::before {
-        position: relative;
-        top: 2px;
-      }
+    &:active {
+      .COMMON_BORDER_IN();
     }
 
     &[aria-label="Deafen"] {
-      .CB_REPLACE_SVG("graphics/msys_speaker.png");
+      .CB_REPLACE_SVG("graphics/mmsys_speaker.png");
     }
 
     &[aria-label="Undeafen"] {
-      .CB_REPLACE_SVG("graphics/msys_speaker_mute.png");
+      .CB_REPLACE_SVG("graphics/mmsys_speaker_mute.png");
     }
 
     &[aria-label="Mute"] {
-      .CB_REPLACE_SVG("graphics/8mic.png");
+      .CB_REPLACE_SVG("graphics/98mic.png");
     }
     &[aria-label="Unmute"] {
-      .CB_REPLACE_SVG("graphics/8mic_mute.png");
+      .CB_REPLACE_SVG("graphics/98mic_mute.png");
     }
 
     // User Settings
-    &[aria-labelledby="_r_31_"] {
-      .CB_REPLACE_SVG("graphics/2k_settings.png");
+    &:not([aria-label]) {
+      .CB_REPLACE_SVG("graphics/w2k_settings.png");
     }
   }
 }
