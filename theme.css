@@ -955,48 +955,32 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
 .BaseAvatar\.module__container___XzZkNT svg image {
   mask-image: none;
 }
+.BaseAvatar\.module__container___XzZkNT .BaseAvatar\.module__statusContainer___XzZkNT {
+  border: none;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 1px white,
+      1px 1px 0 1px black;
+  outline-color: transparent;
+}
+.BaseAvatar\.module__container___XzZkNT .BaseAvatar\.module__statusContainer___XzZkNT::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.BaseAvatar\.module__container___XzZkNT .BaseAvatar\.module__statusContainer___XzZkNT svg {
+  display: none;
+}
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Online"]) .BaseAvatar\.module__statusContainer___XzZkNT {
   display: none !important;
 }
-.BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Idle"]) .BaseAvatar\.module__statusContainer___XzZkNT {
-  border: none;
-  border-radius: 50% !important;
-  box-shadow: 0 0 0 1px white,
-        1px 1px 0 1px black;
-  outline-color: transparent;
-}
-.BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Idle"]) .BaseAvatar\.module__statusContainer___XzZkNT svg {
-  display: none;
-}
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Idle"]) .BaseAvatar\.module__statusContainer___XzZkNT::before {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  display: block;
-  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF5JREFUGNONkMENwCAMA23UjcJMTBtmSh8okalalXsFyxGnEIIbQt99gjlTC+arRxIRgdlZCy03sqRsmRviCbBnboiGQ66SZXljjPFdXD/+8OapfgBQjnkKRTOeHvwGfDhWB8oGbsQAAAAASUVORK5CYII=");
-}
-.BaseAvatar\.module__container___XzZkNT:has(
-    .BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Do Not Disturb"]
-  ) .BaseAvatar\.module__statusContainer___XzZkNT {
-  border: none;
-  border-radius: 50% !important;
-  box-shadow: 0 0 0 1px white,
-        1px 1px 0 1px black;
-  outline-color: transparent;
-}
-.BaseAvatar\.module__container___XzZkNT:has(
-    .BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Do Not Disturb"]
-  ) .BaseAvatar\.module__statusContainer___XzZkNT svg {
-  display: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAF5JREFUGNONkMENwCAMA23UjcJMTBtmSh8okalalXsFyxGnEIIbQt99gjlTC+arRxIRgdlZCy03sqRsmRviCbBnboiGQ66SZXljjPFdXD/+8OapfgBQjnkKRTOeHvwGfDhWB8oGbsQAAAAASUVORK5CYII=");
 }
 .BaseAvatar\.module__container___XzZkNT:has(
     .BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Do Not Disturb"]
   ) .BaseAvatar\.module__statusContainer___XzZkNT::before {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  display: block;
-  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAD9JREFUGNNjZEACZ4wZ/iPzTc4yMMLYjNgUoAOTswyMTAxEAkZCpsEACwMDA4PxGfxqz5owMlDfahr4mtgABwBowBMNhJPeMgAAAABJRU5ErkJggg==");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAD9JREFUGNNjZEACZ4wZ/iPzTc4yMMLYjNgUoAOTswyMTAxEAkZCpsEACwMDA4PxGfxqz5owMlDfahr4mtgABwBowBMNhJPeMgAAAABJRU5ErkJggg==");
 }
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Invisible"]) .BaseAvatar\.module__statusContainer___XzZkNT,
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Offline"]) .BaseAvatar\.module__statusContainer___XzZkNT {

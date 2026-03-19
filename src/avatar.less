@@ -7,6 +7,24 @@
       mask-image: none;
     }
   }
+  .BaseAvatar\.module__statusContainer___XzZkNT {
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+    svg {
+      display: none;
+    }
+    border: none;
+    // THANK YOUUUU https://stackoverflow.com/a/6810937
+    border-radius: 50% !important;
+    box-shadow:
+      0 0 0 1px white,
+      1px 1px 0 1px black;
+    outline-color: transparent;
+  }
 
   &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Online"]) {
     .BaseAvatar\.module__statusContainer___XzZkNT {
@@ -16,14 +34,9 @@
 
   &:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Idle"]) {
     .BaseAvatar\.module__statusContainer___XzZkNT {
-      // THANK YOUUUU https://stackoverflow.com/a/6810937
-      .REPLACE_SVG("graphics/msn_idle.png", 10px, 10px, false);
-      border: none;
-      border-radius: 50% !important;
-      box-shadow:
-        0 0 0 1px white,
-        1px 1px 0 1px black;
-      outline-color: transparent;
+      &::before {
+        background-image: data-uri("graphics/msn_idle.png");
+      }
     }
   }
 
@@ -31,14 +44,9 @@
     .BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Do Not Disturb"]
   ) {
     .BaseAvatar\.module__statusContainer___XzZkNT {
-      // THANK YOUUUU https://stackoverflow.com/a/6810937
-      .REPLACE_SVG("graphics/msn_dnd.png", 10px, 10px, false);
-      border: none;
-      border-radius: 50% !important;
-      box-shadow:
-        0 0 0 1px white,
-        1px 1px 0 1px black;
-      outline-color: transparent;
+      &::before {
+        background-image: data-uri("graphics/msn_dnd.png");
+      }
     }
   }
 
