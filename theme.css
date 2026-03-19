@@ -5,6 +5,7 @@
   --native-titlebar-height: calc(18px + 2px);
   --spacing-3: 2px;
   --panel-control-bg: var(--bg-secondary);
+  --scrollbar-thumb-bg: var(--bg-secondary);
 }
 .Divider\.module__line___XzVjNm {
   border: solid var(--bg-tertiary) 1px;
@@ -989,4 +990,24 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Invisible"]) svg,
 .BaseAvatar\.module__container___XzZkNT:has(.BaseAvatar\.module__statusContainer___XzZkNT[aria-label="Offline"]) svg {
   filter: grayscale(100%);
+}
+.ScrollerTrack\.module__track___YzkyYz {
+  background: var(--bg-tertiary);
+  width: 12px;
+}
+.ScrollerTrack\.module__track___YzkyYz .ScrollerTrack\.module__thumb___YzkyYz {
+  width: 100% !important;
+  left: 0;
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+  background: var(--bg-secondary);
+}
+.ScrollerTrack\.module__track___YzkyYz .ScrollerTrack\.module__thumb___YzkyYz:active {
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+  background: var(--bg-secondary);
+  border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
+  background: var(--bg-primary);
 }
