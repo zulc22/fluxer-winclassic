@@ -5,6 +5,6 @@ theme.user.css: src/theme.less
 	bun compile-theme.bun.ts
 
 dev:
-	bunx nodemon --exec "bun compile-theme.bun.ts" -e "less"
+	bunx nodemon --exec "bun compile-theme.bun.ts" --watch src -e '*'
 
 .PHONY: dev

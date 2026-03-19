@@ -1,0 +1,14 @@
+{
+  "name": "fluxer-winclassic",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "less": "^4.6.4"
+  }
+}

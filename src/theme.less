@@ -1,325 +1,392 @@
 :root {
-    /* 'Helvetica' meant to refer to the Chicago95 Pixel-Microsoft-Sans typeface */
-    --font-sans: Helvetica, 'MS Sans Serif', sans-serif;
-    --font-mono: 'Lucida Console', 'Courier New', monospace;
+  /* 'Helvetica' meant to refer to the Chicago95 Pixel-Microsoft-Sans typeface */
+  --font-sans: Helvetica, "MS Sans Serif", sans-serif;
+  --font-mono: "Lucida Console", "Courier New", monospace;
 
-    --native-titlebar-height: calc(18px + 2px);
-    --spacing-3: 2px;
+  --native-titlebar-height: calc(18px + 2px);
+  --spacing-3: 2px;
 }
 
 * {
-    border-radius: 0px !important;
+  border-radius: 0px !important;
 }
 
-.COMMON_BORDER_OUT {
-    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 0;
+.COMMON_BORDER_OUT() {
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary)
+    var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+  background: var(--bg-secondary);
 }
 
-.COMMON_BORDER_IN {
-    .COMMON_BORDER_OUT();
-    border-color: var(--bg-secondary) var(--bg-primary) var(--bg-primary) var(--bg-secondary);
+.COMMON_BORDER_IN() {
+  .COMMON_BORDER_OUT();
+  border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary)
+    var(--bg-tertiary);
+  background: var(--bg-primary);
 }
 
-.FOCUS_WITHIN_OUTLINE {
-    @outset: 4px;
+.FOCUS_WITHIN_OUTLINE(@dotted: true) {
+  @outset: if(@dotted, 3px, 2px);
 
-    &:focus-within {
-        .COMMON_BORDER_OUT();
+  overflow: visible;
+
+  &:focus-within {
+    .COMMON_BORDER_IN();
+  }
+
+  &:focus-within::after {
+    position: absolute;
+    content: "";
+    z-index: 999;
+    top: -@outset;
+    left: -@outset;
+    right: -@outset;
+    bottom: -@outset;
+    border: if(@dotted, 1px dotted black, 1px solid black);
+  }
+}
+
+.MARLETT_BUTTON(@text) {
+  width: 16px;
+  height: 14px;
+  .COMMON_BORDER_OUT();
+  position: relative;
+  cursor: default;
+  color: var(--text-primary);
+  opacity: 1;
+  &::before {
+    font-family: Marlett;
+    font-size: 12px;
+    position: relative;
+    top: -3px;
+    content: @text;
+  }
+  &:hover {
+    color: var(--text-primary);
+  }
+  &:active {
+    .COMMON_BORDER_IN();
+    &::before {
+      left: 1px;
+      top: -2px;
     }
+  }
+}
 
-    &:focus-within::after {
-        position: absolute;
-        content: "";
-        z-index: -1;
-        top: -@outset;
-        left: -@outset;
-        right: -@outset;
-        bottom: -@outset;
-        border: 1px dotted black;
-    }
+.MINIMIZE_BUTTON() {
+  .MARLETT_BUTTON("0");
+}
+
+.MAXIMIZE_BUTTON() {
+  .MARLETT_BUTTON("1");
+}
+
+.RESTORE_BUTTON() {
+  .MARLETT_BUTTON("2");
+}
+
+.CLOSE_BUTTON() {
+  .MARLETT_BUTTON("r");
 }
 
 .Button\.module__button___Yzg1Yz {
-    .COMMON_BORDER_OUT()
+  .COMMON_BORDER_OUT();
+  min-width: 75px;
+  max-height: 23px;
+  &.Button\.module__secondary___Yzg1Yz {
+    background-color: var(--bg-secondary) !important;
+  }
 }
 
-body,
-.NativeTitlebar\.module__titlebar___ZWZkOD,
 .Modal\.module__layer___XzA4MW {
-    .COMMON_BORDER_OUT()
+  .COMMON_BORDER_OUT();
+  background: none;
+}
+
+.Modal\.module__root___XzA4MW {
+  .COMMON_BORDER_OUT();
+
+  .Modal\.module__description___XzA4MW {
+    @icon-offset: 32px + 19px;
+    margin-left: @icon-offset + 11px;
+    position: relative;
+    color: var(--text-primary);
+    &::before {
+      position: absolute;
+      left: -@icon-offset;
+      content: data-uri("msg_warning.png");
+    }
+  }
+
+  .Modal\.module__header___XzA4MW {
+    background: @brand-gradient;
+    color: var(--text-on-brand-primary);
+    height: 2rem;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    padding-top: 6px;
+
+    .Modal\.module__headerInner___XzA4MW {
+      .Modal\.module__headerText___XzA4MW h3 {
+        color: inherit;
+      }
+      button[aria-label="Close"] {
+        .CLOSE_BUTTON();
+        svg {
+          display: none;
+        }
+        &::before {
+          top: 1px;
+        }
+        &:active::before {
+          top: 2px;
+        }
+      }
+    }
+  }
 }
 
 .Modal\.module__modalBackdrop___XzA4MW {
-    background: data-uri('dither-background.png');
-    opacity: 1;
+  background: data-uri("dither-background.png");
 }
+
+@brand-gradient: linear-gradient(
+  to right,
+  var(--brand-primary),
+  var(--brand-secondary)
+);
 
 /* titlebar */
 .NativeTitlebar\.module__titlebar___ZWZkOD {
+  .COMMON_BORDER_OUT();
+  border-bottom-style: none;
+  background: @brand-gradient;
 
-    border-bottom-style: none;
-    background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+  .NativeTitlebar\.module__controls___ZWZkOD {
+    gap: 1px;
 
-    .NativeTitlebar\.module__controls___ZWZkOD {
-        gap: 1px;
-
-        button {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        :hover {
-            background: var(--bg-primary) !important;
-            color: var(--text-primary) !important;
-        }
-
-        .NativeTitlebar\.module__controlButton___ZWZkOD {
-            width: 16px;
-            height: 14px;
-            border: 2px outset var(--bg-secondary);
-            position: relative;
-            cursor: default;
-
-            svg {
-                height: 10px;
-                left: -3px;
-                position: absolute;
-                visibility: hidden;
-            }
-
-            &[aria-label="Minimize window"]::before {
-                font-family: Marlett;
-                font-size: 12px;
-                position: relative;
-                top: -3px;
-                content: "0";
-            }
-
-            &[aria-label="Maximize window"]::before {
-                font-family: Marlett;
-                font-size: 12px;
-                position: relative;
-                top: -3px;
-                content: "1";
-            }
-
-            &[aria-label="Restore window"]::before {
-                font-family: Marlett;
-                font-size: 12px;
-                position: relative;
-                top: -3px;
-                content: "2";
-            }
-
-            &[aria-label="Close window"]::before {
-                font-family: Marlett;
-                font-size: 12px;
-                position: relative;
-                top: -3px;
-                content: "r";
-            }
-        }
-
+    button {
+      background: var(--bg-primary);
+      color: var(--text-primary);
     }
 
-    .NativeTitlebar\.module__left___ZWZkOD {
-        opacity: 1;
-
-        .NativeTitlebar\.module__wordmark___ZWZkOD {
-            color: var(--text-on-brand-primary);
-            transform: skew(-10deg, 0deg) scaleY(0.8) translateY(-1px);
-        }
-
-        &::before {
-            content: url('https://fluxerstatic.com/web/favicon-16x16.png');
-            left: 2px;
-            top: 2px;
-            position: relative;
-        }
+    :hover {
+      background: var(--bg-primary) !important;
+      color: var(--text-primary) !important;
     }
 
+    .NativeTitlebar\.module__controlButton___ZWZkOD {
+      svg {
+        height: 10px;
+        left: -3px;
+        position: absolute;
+        visibility: hidden;
+      }
+
+      &[aria-label="Minimize window"] {
+        .MINIMIZE_BUTTON();
+      }
+
+      &[aria-label="Maximize window"]::before {
+        .MAXIMIZE_BUTTON();
+      }
+
+      &[aria-label="Restore window"]::before {
+        .RESTORE_BUTTON();
+      }
+
+      &[aria-label="Close window"]::before {
+        .CLOSE_BUTTON();
+      }
+    }
+  }
+
+  .NativeTitlebar\.module__left___ZWZkOD {
+    opacity: 1;
+
+    .NativeTitlebar\.module__wordmark___ZWZkOD {
+      color: var(--text-on-brand-primary);
+      transform: skew(-10deg, 0deg) scaleY(0.8) translateY(-1px);
+    }
+
+    &::before {
+      content: url("https://fluxerstatic.com/web/favicon-16x16.png");
+      left: 2px;
+      top: 2px;
+      position: relative;
+    }
+  }
 }
 
-
 [type="button"]:not([role="radio"]):active {
-    .COMMON_BORDER_IN();
+  .COMMON_BORDER_IN();
 }
 
 /* file attachment icon */
 
 .AttachmentFile\.module__iconContainer___XzUxYj {
-    background-color: transparent;
+  background-color: transparent;
 
-    &::before {
-        content: data-uri('w98_file_windows.png');
-        height: 48px;
-    }
+  &::before {
+    content: data-uri("w98_file_windows.png");
+    height: 48px;
+  }
 
-    svg {
-        visibility: hidden;
-    }
+  svg {
+    visibility: hidden;
+  }
 }
 
 /* file attachment styling */
 
 .AttachmentFile\.module__fileName___XzUxYj::before {
-    content: "Sent: ";
-    font-weight: normal;
+  content: "Sent: ";
+  font-weight: normal;
 }
 
 .AttachmentFile\.module__attachmentContainer___XzUxYj {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    flex-wrap: wrap;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .AttachmentFile\.module__deleteButton___XzUxYj {
-    border: 2px outset;
-    background-color: var(--background-primary);
+  .COMMON_BORDER_OUT();
 
-    &:hover {
-        background: var(--background-primary);
-    }
+  &:hover {
+    .COMMON_BORDER_OUT();
+  }
 
-    &::before {
-        content: data-uri('wme_delete.png');
-        position: relative;
-        left: 3px;
-        top: 3px;
-    }
+  &::before {
+    content: data-uri("wme_delete.png");
+    position: relative;
+    top: 3px;
+  }
 
-    &:active::before {
-        left: 4px;
-        top: 4px;
-    }
+  &:active::before {
+    left: 1px;
+    top: 4px;
+  }
 
-    svg {
-        visibility: hidden;
-    }
+  svg {
+    display: none;
+  }
 }
 
+// "Download this file" text below sent files
+// inspo. MSN Messenger, Microsoft download sites
 .AttachmentFile\.module__downloadButton___XzUxYj {
-    flex-basis: 100%;
+  flex-basis: 100%;
+  background: transparent;
+  justify-content: left;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
     background: transparent;
-    justify-content: left;
-    width: auto;
-    height: auto;
-    padding: 0;
-    margin: 0;
+  }
 
-    &:hover {
-        background: transparent;
-    }
+  &::before {
+    content: data-uri("w98_download.png");
+    height: 16px;
+    margin-right: 4px;
+  }
 
-    &::before {
-        content: data-uri('w98_download.png');
-        height: 16px;
-        margin-right: 4px;
-    }
+  &::after {
+    content: "Download this file";
+    color: var(--text-link);
+    text-decoration: underline;
+  }
 
-    &::after {
-        content: "Download this file";
-        color: var(--text-link);
-        text-decoration: underline;
-    }
-
-    svg {
-        display: none;
-    }
+  svg {
+    display: none;
+  }
 }
 
-/* image button */
+.REPLACE_SVG(@file_path, @width: 32px, @height: 32px) {
+  svg {
+    display: none;
+  }
+  &::before {
+    content: data-uri(@file_path);
+    display: block;
+    width: @width;
+    height: @height;
+  }
+}
 
-.MediaContainer\.module__actionButton___XzY2ZW:hover {
-    transform: none;
+/* image buttons */
+
+.MediaContainer\.module__mediaHoverAction___XzY2ZW {
+  .MediaContainer\.module__actionButton___XzY2ZW {
+    &:hover {
+      transform: none;
+    }
+
+    .COMMON_BORDER_OUT();
+
+    &.MediaContainer\.module__deleteButton___XzY2ZW {
+      .REPLACE_SVG("wme_delete.png", 16, 16);
+    }
+  }
 }
 
 .Divider\.module__line___XzVjNm {
-    border: inset 1px;
+  border: inset 1px;
 }
+
+// guild icons
 
 .GuildsLayout\.module__addGuildButtonIcon___XzkwZG {
+  &:has(.DiscoveryButton\.module__iconText___ZjlkNW),
+  &:has(.DiscoveryButton\.module__iconTextSelected___ZjlkNW) {
+    .REPLACE_SVG("w98_channels_32.png");
+  }
 
-    &:has(.DiscoveryButton\.module__iconText___ZjlkNW) {
-        svg {
-            display: none;
-        }
+  &:has(.HelpButton\.module__iconText___XzhjYj),
+  &:has(.HelpButton\.module__iconTextSelected___XzhjYj) {
+    .REPLACE_SVG("w98_help_book_big.png");
+  }
 
-        &::before {
-            content: data-uri('w98_channels_32.png');
-            display: block;
-            height: 32px;
-            width: 32px;
-        }
-    }
-
-    &:has(.HelpButton\.module__iconText___XzhjYj) {
-        svg {
-            display: none;
-        }
-
-        &::before {
-            content: data-uri('w98_help_question_mark.png');
-            display: block;
-            height: 32px;
-            width: 32px;
-        }
-    }
-
-    &:has(.DownloadButton\.module__button___XzQwMj) {
-        svg {
-            display: none;
-        }
-
-        &::before {
-            content: data-uri('w98_help_question_mark.png');
-            display: block;
-            height: 32px;
-            width: 32px;
-        }
-    }
-
+  &:has(.DownloadButton\.module__iconText___XzQwMj) {
+    .REPLACE_SVG("setup_32.png");
+  }
 }
 
-.Message\.module__systemMessageIconWrapper___XzQ1Zj {
-    &:has(.GuildJoinMessage\.module__icon___XzM3NW) {
-        svg {
-            display: none;
-        }
+// system messages
 
-        &::before {
-            content: data-uri('wme_forward.png');
-            display: block;
-            height: 16px;
-            width: 16px;
-        }
-    }
+.Message\.module__systemMessageIconWrapper___XzQ1Zj {
+  // -> User has joined
+  &:has(.GuildJoinMessage\.module__icon___XzM3NW) {
+    .REPLACE_SVG("wme_forward.png", 16, 16);
+  }
 }
 
 .SettingsModalLayout\.module__sidebarNavContent___XzU3Zj {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    .SettingsModalLayout\.module__sidebarCategoryTitle___XzU3Zj {
-        text-transform: none;
-        color: var(--text-primary);
-        font-weight: normal;
-        border-bottom: var(--background-tertiary) 1px solid;
-        padding-bottom: 0;
-        margin-bottom: 6px;
+  .SettingsModalLayout\.module__sidebarCategoryTitle___XzU3Zj {
+    text-transform: none;
+    color: var(--text-primary);
+    font-weight: normal;
+    border-bottom: var(--bg-tertiary) 1px solid;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+  }
+
+  .SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
+    background: var(--brand-primary);
+    color: var(--text-on-brand-primary);
+
+    svg {
+      color: inherit;
     }
-
-    .SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
-        background: var(--brand-primary);
-        color: var(--text-on-brand-primary);
-
-        svg {
-            color: inherit;
-        }
-    }
+  }
 }
 
 /* .SettingsModalLayout\.module__desktopSidebar___XzU3Zj {
@@ -328,30 +395,59 @@ body,
 } */
 
 .Input\.module__input___ZGQ3MT {
-    padding: 3px 4px;
-    background-color: var(--bg-primary) !important;
-    border: 2px inset;
-    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
+  padding: 3px 4px;
+  .COMMON_BORDER_IN();
 
-    &.Input\.module__minHeight___ZGQ3MT {
-        min-height: 22px;
-    }
+  &.Input\.module__minHeight___ZGQ3MT {
+    min-height: 22px;
+  }
 
-    .FOCUS_WITHIN_OUTLINE()
+  .FOCUS_WITHIN_OUTLINE();
 }
 
 .ColorPickerField\.module__inputWrapper___XzAyOD {
-    background-color: var(--bg-primary) !important;
-    border: 2px inset;
-    border-color: var(--bg-primary) var(--bg-secondary) var(--bg-secondary) var(--bg-primary);
-    height: 22px;
-    position: relative;
-    overflow: visible;
+  .COMMON_BORDER_IN();
+  height: 22px;
+  position: relative;
 
-    .ColorPickerField\.module__input___XzAyOD {
-        padding: 3px 4px;
-        font-size: 13px;
+  .ColorPickerField\.module__input___XzAyOD {
+    padding: 3px 4px;
+    font-size: 13px;
+  }
+
+  .FOCUS_WITHIN_OUTLINE();
+}
+
+.UserArea\.module__controlsContainer___XzEyMT {
+  .UserArea\.module__controlButton___XzEyMT {
+    position: relative;
+
+    .CB_REPLACE_SVG(@file_path) {
+      .REPLACE_SVG(@file_path, 16, 16);
+      &::before {
+        position: relative;
+        top: 2px;
+      }
     }
 
-    .FOCUS_WITHIN_OUTLINE()
+    &[aria-label="Deafen"] {
+      .CB_REPLACE_SVG("mmsys_speaker.png");
+    }
+
+    &[aria-label="Undeafen"] {
+      .CB_REPLACE_SVG("mmsys_speaker_mute.png");
+    }
+
+    &[aria-label="Mute"] {
+      .CB_REPLACE_SVG("98mic.png");
+    }
+    &[aria-label="Unmute"] {
+      .CB_REPLACE_SVG("98mic_mute.png");
+    }
+
+    // User Settings
+    &[aria-labelledby="_r_31_"] {
+      .CB_REPLACE_SVG("w2k_settings.png");
+    }
+  }
 }
