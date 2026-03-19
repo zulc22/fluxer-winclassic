@@ -118,6 +118,11 @@
   &.Button\.module__secondary___Yzg1Yz {
     background-color: var(--bg-secondary) !important;
   }
+  &:active {
+    .COMMON_BORDER_IN();
+    top: 1px;
+    left: 1px;
+  }
 }
 
 .Modal\.module__layer___XzA4MW {
@@ -191,7 +196,8 @@
   }
 }
 
-.Modal\.module__modalBackdrop___XzA4MW {
+.Modal\.module__modalBackdrop___XzA4MW,
+.MediaModal\.module__modalBackdrop___XzMyYj {
   background: data-uri("dither-background.png");
 }
 
@@ -263,9 +269,12 @@
   }
 }
 
-[type="button"]:not([role="radio"]):active {
-  .COMMON_BORDER_IN();
-}
+// [type="button"]:not([role="radio"]) {
+//   .COMMON_BORDER_OUT();
+// }
+// [type="button"]:not([role="radio"]):active {
+//   .COMMON_BORDER_IN();
+// }
 
 /* file attachment icon */
 
@@ -308,6 +317,10 @@
     content: data-uri("wme_delete.png");
     position: relative;
     top: 3px;
+  }
+
+  &:active {
+    .COMMON_BORDER_IN();
   }
 
   &:active::before {
@@ -356,11 +369,14 @@
   svg {
     display: none;
   }
+
   &::before {
+    position: relative;
     content: data-uri(@file_path);
     display: block;
     width: @width;
-    height: @height;
+    height: @height - (@height / 2);
+    top: 50%;
   }
 }
 
@@ -376,6 +392,49 @@
 
     &.MediaContainer\.module__deleteButton___XzY2ZW {
       .REPLACE_SVG("wme_delete.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: 0;
+      }
+    }
+
+    &[aria-label="Download"] {
+      .REPLACE_SVG("w98_download.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: 0;
+      }
+    }
+
+    &[aria-label="Add to favorites"] {
+      .REPLACE_SVG("favorite_empty.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: -1px;
+      }
+      &:active::before {
+        top: 0px;
+      }
+    }
+
+    &[aria-label="Remove from favorites"] {
+      .REPLACE_SVG("favorite.png", 16, 16);
+      &::before {
+        height: 16px;
+        top: -1px;
+      }
+      &:active::before {
+        top: 0px;
+      }
+    }
+
+    &:active {
+      .COMMON_BORDER_IN();
+
+      &::before {
+        left: 1px;
+        top: 1px;
+      }
     }
   }
 }
@@ -387,6 +446,16 @@
 // guild icons
 
 .GuildsLayout\.module__addGuildButtonIcon___XzkwZG {
+  button&:active {
+    background: none;
+    border: none;
+  }
+
+  &::before {
+    top: 0px !important;
+    height: 32px !important;
+  }
+
   &:has(.DiscoveryButton\.module__iconText___ZjlkNW),
   &:has(.DiscoveryButton\.module__iconTextSelected___ZjlkNW) {
     .REPLACE_SVG("w98_channels_32.png");
@@ -423,7 +492,10 @@
     margin-bottom: 6px;
   }
 
-  .SettingsModalLayout\.module__sidebarItem___XzU3Zj {
+  .SettingsModalLayout\.module__sidebarItem___XzU3Zj,
+  .SettingsModalLayout\.module__sidebarSubItem___XzU3Zj {
+    display: flex;
+    align-items: center;
     background: var(--bg-primary);
     font-size: 14px;
     height: 24px;
@@ -432,12 +504,52 @@
       border: none;
     }
 
-    &.SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj {
+    &.SettingsModalLayout\.module__sidebarItemSelected___XzU3Zj,
+    &.SettingsModalLayout\.module__sidebarSubItemActive___XzU3Zj {
       background: var(--brand-primary);
       color: var(--text-on-brand-primary);
 
       svg {
         color: inherit;
+      }
+    }
+  }
+
+  .SettingsModalLayout\.module__sidebarSubItems___XzU3Zj {
+    border-left: 1px dotted black;
+    position: relative;
+
+    &::before {
+      // content: data-uri("tree_expand.png");
+      // left: -5px;
+      // background: none;
+      // z-index: 2;
+      background: none;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 10px;
+      bottom: 0px;
+      left: -1px;
+      background: var(--bg-primary);
+      content: "";
+      z-index: 1;
+    }
+
+    .SettingsModalLayout\.module__sidebarSubItem___XzU3Zj {
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 50%;
+        width: 11px;
+        left: -11px;
+        height: 1px;
+        border-top: 1px dotted black;
+        content: "";
+        z-index: 1;
       }
     }
   }
@@ -468,6 +580,10 @@
 
   #settings-tab-linked_accounts {
     .REPLACE_SVG("wab_book_16.png", 16, 16);
+  }
+
+  #settings-tab-appearance {
+    .REPLACE_SVG("mspaint_brush.png", 16, 16);
   }
 }
 
@@ -575,4 +691,16 @@
       .CB_REPLACE_SVG("w2k_settings.png");
     }
   }
+}
+
+.MediaModal\.module__headerMeta___XzMyYj,
+.MediaModal\.module__actionControlsBox___XzMyYj,
+.MediaModal\.module__closeControlBox___XzMyYj {
+  .COMMON_BORDER_OUT();
+  svg {
+    color: var(--text-primary);
+  }
+}
+
+.MediaModal\.module__closeControlBox___XzMyYj {
 }
