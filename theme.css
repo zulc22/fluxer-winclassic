@@ -211,7 +211,7 @@
   left: 1px;
   top: -2px;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"] {
   width: 16px;
   height: 14px;
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
@@ -223,17 +223,17 @@
   color: var(--text-primary);
   opacity: 1;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before {
   font-family: Marlett;
   font-size: 12px;
   position: relative;
   top: -3px;
   content: "1";
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before:hover {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]:hover {
   color: var(--text-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before:active {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
@@ -241,11 +241,11 @@
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]::before:active::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Maximize window"]:active::before {
   left: 1px;
   top: -2px;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"] {
   width: 16px;
   height: 14px;
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
@@ -257,17 +257,17 @@
   color: var(--text-primary);
   opacity: 1;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before {
   font-family: Marlett;
   font-size: 12px;
   position: relative;
   top: -3px;
   content: "2";
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before:hover {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]:hover {
   color: var(--text-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before:active {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
@@ -275,11 +275,11 @@
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]::before:active::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Restore window"]:active::before {
   left: 1px;
   top: -2px;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"] {
   width: 16px;
   height: 14px;
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
@@ -291,17 +291,17 @@
   color: var(--text-primary);
   opacity: 1;
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before {
   font-family: Marlett;
   font-size: 12px;
   position: relative;
   top: -3px;
   content: "r";
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before:hover {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]:hover {
   color: var(--text-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before:active {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
@@ -309,7 +309,7 @@
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
-.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]::before:active::before {
+.NativeTitlebar\.module__titlebar___ZWZkOD .NativeTitlebar\.module__controls___ZWZkOD .NativeTitlebar\.module__controlButton___ZWZkOD[aria-label="Close window"]:active::before {
   left: 1px;
   top: -2px;
 }
