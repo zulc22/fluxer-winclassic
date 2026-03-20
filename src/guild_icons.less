@@ -9,7 +9,32 @@
   }
 }
 
-// included guild icons (add, discover, ...)
+// top icons
+.GuildsLayout\.module__fluxerButton___XzkwZG {
+  &[aria-label="Favorites"] {
+    .GuildsLayout\.module__fluxerButtonIcon___XzkwZG {
+      .REPLACE_SVG("graphics/98_favorites_folder.png",32,32,false);
+      &::before {
+        display: block;
+        height: 32px;
+      }
+    }
+  }
+
+  &[aria-label="Direct Messages"] {
+    .GuildsLayout\.module__fluxerButtonIcon___XzkwZG {
+      svg {
+        display: none;
+      }
+      &::before {
+        display: block;
+        content: data-uri("graphics/msn_freinds.png");
+      }
+    }
+  }
+}
+
+// add-guild icons (add, discover, ...)
 .GuildsLayout\.module__addGuildButtonIcon___XzkwZG {
   button&:active {
     background: none;
@@ -37,4 +62,38 @@
   &:has(.DownloadButton\.module__iconText___XzQwMj) {
     .REPLACE_SVG("graphics/w98_download_big.png");
   }
+}
+
+.GuildsLayout\.module__fluxerButton___XzkwZG {
+  .GuildsLayout\.module__relative___XzkwZG {
+    .COMMON_BORDER_OUT();
+
+    &:active {
+      .COMMON_BORDER_IN();
+      transform: translate(1px, 1px);
+    }
+  }
+
+  &[aria-pressed="true"],
+  &:hover {
+    .GuildsLayout\.module__relative___XzkwZG {
+      border-color: color-mix(in lab, var(--brand-primary) 80%, white);
+      border-style: outset;
+    }
+  }
+}
+
+.GuildsLayout\.module__unavailableContainer___XzkwZG > div {
+  border-color: rgb(255, 92, 92);
+  border-style: outset;
+
+  &:active {
+    border-style: inset;
+  }
+}
+
+.GuildsLayout\.module__guildIndicatorBar___XzkwZG {
+  background: var(--brand-secondary);
+  border: 2px outset color-mix(in lab, var(--brand-secondary) 80%, white);
+  width: 4px !important;
 }

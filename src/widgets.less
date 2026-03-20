@@ -68,15 +68,19 @@
 
 .Button\.module__button___Yzg1Yz {
   .COMMON_BORDER_OUT();
+  padding: 2px 3px;
+  font-size: 13px;
+  font-weight: normal;
+  position: relative;
   min-width: 75px;
+  min-height: 23px;
   max-height: 23px;
   &.Button\.module__secondary___Yzg1Yz {
     background-color: var(--bg-secondary) !important;
   }
   &:active {
     .COMMON_BORDER_IN();
-    top: 1px;
-    left: 1px;
+    transform: translate(1px, 1px);
   }
 }
 

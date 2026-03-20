@@ -6,6 +6,11 @@
   --spacing-3: 2px;
   --panel-control-bg: var(--bg-secondary);
   --scrollbar-thumb-bg: var(--bg-secondary);
+  --layout-guild-list-width: 64px;
+  --layout-header-height: 48px;
+}
+.GuildHeader\.module__headerContainer___ZGNlOD {
+  height: var(--layout-header-height) !important;
 }
 .Divider\.module__line___XzVjNm {
   border: solid var(--bg-tertiary) 1px;
@@ -48,13 +53,11 @@
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .AttachmentFile\.module__deleteButton___XzUxYj:hover {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .AttachmentFile\.module__deleteButton___XzUxYj::before {
   content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAHZJREFUOMutk8sNwDAIQ71ObtkpykZRx2Kl10M/qvJp8ykSF7ANskD6I1IMmESKgR68SRQFNgcSKW9muGbfJDizBrIP8ULoCe4m10SGyW+bTJFZWf+qsWJgt4h5B/EwrYWheQPedR1SU8S8m3f8/ocBMiuDfo8dzDBsPeK60GcAAAAASUVORK5CYII=");
@@ -65,7 +68,6 @@
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -105,15 +107,34 @@
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .GuildsLayout.module__guildListItem___XzkwZG[aria-pressed="true"] .GuildsLayout\.module__relative___XzkwZG {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-label="Favorites"] .GuildsLayout\.module__fluxerButtonIcon___XzkwZG svg {
+  display: none;
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-label="Favorites"] .GuildsLayout\.module__fluxerButtonIcon___XzkwZG::before {
+  position: relative;
+  width: 32;
+  height: 32;
+  display: block;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAThJREFUWMPtVkt6hiAQy/TzRuFMcCY4E5yJLqwW5Gn5XdVslIdMJhNA4MWL/w7pDVqL2Bs3pv/9DLZecK0jAFcdDyEAcHGUxJ8UGAVPSSjlsEJCasFJfWuRENxwznS5rEV8AkDdT1ubirshAQA2+n6e1gLGoPDM13SAXpuVMV5INDBHgPW2iN53Q6jMTVXhKoHUtaKrBEX0L5Fr5uGDBLw3BQkRDe9NKTsb/ljxAMmMhFIW3huQLOdPeGCbcjfr8sfoIKKhlM36sqwHJLY75vPenO9K2ZNQ2o/APOCSAhclDpmPmh/yK2XzzCekH3ugsbWO4EzkOT3Be/XvE2D9wInR7cGZGzN6l8uOVQVaCyWZRe/2soTGaYhPlCA0Tjd09js7p+jMdfzU75cxZczWHf0UCcGLFy8u+AbFpNyiYBMfKwAAAABJRU5ErkJggg==");
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-label="Favorites"] .GuildsLayout\.module__fluxerButtonIcon___XzkwZG::before {
+  display: block;
+  height: 32px;
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-label="Direct Messages"] .GuildsLayout\.module__fluxerButtonIcon___XzkwZG svg {
+  display: none;
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-label="Direct Messages"] .GuildsLayout\.module__fluxerButtonIcon___XzkwZG::before {
+  display: block;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAASZJREFUOMu1lFuuwyAMRCdVdjR7cteE19RZE/fDgfAIqB+9SK1CDceOPVPgx+tYBeyTMxjPci+P3fL3+/gKaDlnApAAyWG8cYLQbCboawUDAkYCIOuHba0ELKW8BNonZcY5uDsAgTSU34gLPiwmy88V0vrt0DlFQ7dD6YHXYbWXFF0rMA0ZFF91nVOK4ZIgULor3MCmCjXHUe7sYNJGNkwps+pP4MMQJpj82OqQZrlOU8Kk6gVs6xTaJQWyf6cSJx+dgn/3sn165Y9Nn2JDlUcHulxRtFjb9/DPEEliOO3rv5YwV4WRBo4uqkFAUvX0GUG7nCAIglzV/GwSTeJudrr6cpaehRtufRX9hQ2JB8nPGWj5DLBPmdrDDv96yudqitqNFqshAX88oKq3c0A+hQAAAABJRU5ErkJggg==");
 }
 button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   background: none;
@@ -160,11 +181,40 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   display: block;
   content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAbJJREFUWMPFV0GShCAMbCiP+xzv5AHzJ8Kf9gF490/ZA6IMIwpI7VDlgZRUN+kOBODLQwEAM0vrQmbe1w8hYO1cvci5dRgJ3buQiCIB+QoBY8wQEvoJ+xEkpl5w59yHKTczq+EE1GY6ABA748ywy/Jz/JNkQ90Q0nfAyq3wRADH2OuNUKG0VPwEELmQR1+Be6LgeE8AM3YW4FsSeQZKJPSdyQAO4CwbAY6iN/vmjIQu7V6sxbIs8OTTjR/gzFDq1ZSFrjI0xgRcVgcBWIBtV/XkWZjKHnB7FpJi26QAADfkMioSYAQbAwZgSqIuZOCB7jGmAHUqgdgZ/EEn8cC2e5Hfbv1jvO4o3vW2CYn6KshJpPOiBGJnKE50Zgk738qvZvc5qACSk7k8ikXCkRvKrQ/4To6quyAFdRcnYOutyMyq6TZ0bgURDSk/7z0AiP4ieL0Ezq2w1g4Bz/uIJgneT8UxYzprKP5zTIl779x9qWXeMb/NTZj7xRczcNfHyRloiVgaJ6Lj3qIBTWmNGdN/9p5iVFecGrFEpsWs0xMDPamK+Kybeuv3yUjflC2PCBlYfTvuH8gBuIwWCgg3AAAAAElFTkSuQmCC");
 }
+.GuildsLayout\.module__fluxerButton___XzkwZG .GuildsLayout\.module__relative___XzkwZG {
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG .GuildsLayout\.module__relative___XzkwZG:active {
+  border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
+  background: var(--bg-primary);
+  transform: translate(1px, 1px);
+}
+.GuildsLayout\.module__fluxerButton___XzkwZG[aria-pressed="true"] .GuildsLayout\.module__relative___XzkwZG,
+.GuildsLayout\.module__fluxerButton___XzkwZG:hover .GuildsLayout\.module__relative___XzkwZG {
+  border-color: color-mix(in lab, var(--brand-primary) 80%, white);
+  border-style: outset;
+}
+.GuildsLayout\.module__unavailableContainer___XzkwZG > div {
+  border-color: #ff5c5c;
+  border-style: outset;
+}
+.GuildsLayout\.module__unavailableContainer___XzkwZG > div:active {
+  border-style: inset;
+}
+.GuildsLayout\.module__guildIndicatorBar___XzkwZG {
+  background: var(--brand-secondary);
+  border: 2px outset color-mix(in lab, var(--brand-secondary) 80%, white);
+  width: 4px !important;
+}
 .MediaContainer\.module__mediaHoverAction___XzY2ZW .MediaContainer\.module__actionButton___XzY2ZW {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .MediaContainer\.module__mediaHoverAction___XzY2ZW .MediaContainer\.module__actionButton___XzY2ZW:hover {
   transform: none;
@@ -239,7 +289,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -253,7 +302,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .MediaModal\.module__headerMeta___XzMyYj svg,
 .MediaModal\.module__actionControlsBox___XzMyYj svg,
@@ -264,14 +312,12 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   background: none;
 }
 .Modal\.module__root___XzA4MW {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .Modal\.module__root___XzA4MW .Modal\.module__description___XzA4MW {
   margin-left: 62px;
@@ -300,7 +346,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -320,7 +365,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -352,7 +396,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -372,7 +415,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -392,6 +434,19 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
 .Modal\.module__modalBackdrop___XzA4MW,
 .MediaModal\.module__modalBackdrop___XzMyYj {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABFJREFUCNdjYGBg+M+ABP4DAA8DAf+DhMQUAAAAAElFTkSuQmCC");
+}
+.ExternalLinkWarningModal\.module__iconCircle___XzQyYz {
+  background: none;
+}
+.ExternalLinkWarningModal\.module__iconCircle___XzQyYz svg {
+  display: none;
+}
+.ExternalLinkWarningModal\.module__iconCircle___XzQyYz::before {
+  position: relative;
+  width: 32;
+  height: 32;
+  display: block;
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAARNJREFUWMO9l1EShCAIhsHZe8XNlqPhydiHajPHTEF1xsme/Pn4gUIwLGbQ5IywcjGDqu5bRBTgErP08lwEM5uEBK+obaNEIOvS6EsUekWEEeJSCsuj91IIo0ROo9ASvYdCN4EYBRDhv2OUeRRK0R+N57Y9FMLolA2j8JT7NwK9FMIM47op1JzfQqCHQjCIm0vhre6TEawA+7unLwRvfmuRdlNo7XrHF5GOmBGmKiCS23OIF3p6/lkNI2aEuQ+oDuwLvdGnlVCrghYKRg9Q8Wyi0Bt9qRt6vGAiICLFs4XCxzpsLhOSY+awTpmGta+pfOHpg+93/uVEBJxNM0zN2DrpHMjLBPK8rPvXZMQnc6y4HADgB+EBsYhmFGApAAAAAElFTkSuQmCC");
 }
 .SettingsModalLayout\.module__sidebarNavContent___XzU3Zj {
   box-sizing: border-box;
@@ -440,7 +495,7 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   position: absolute;
   display: block;
   width: 1px;
-  height: 10px;
+  height: 11px;
   bottom: 0px;
   left: -1px;
   background: var(--bg-primary);
@@ -548,7 +603,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-bottom-style: none;
   background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
 }
@@ -575,7 +629,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -595,7 +648,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -609,7 +661,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -629,7 +680,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -643,7 +693,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -663,7 +712,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -677,7 +725,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
   cursor: default;
   color: var(--text-primary);
@@ -697,7 +744,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -722,14 +768,12 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   position: relative;
 }
 .UserArea\.module__controlsContainer___XzEyMT .UserArea\.module__controlButton___XzEyMT:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -813,7 +857,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
   background: var(--bg-primary) !important;
@@ -825,7 +868,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary) !important;
   border-style: solid !important;
   border-width: 2px !important;
-  background: var(--bg-secondary) !important;
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary) !important;
   background: var(--bg-primary) !important;
 }
@@ -833,7 +875,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
   background: var(--bg-primary) !important;
@@ -845,7 +886,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary) !important;
   border-style: solid !important;
   border-width: 2px !important;
-  background: var(--bg-secondary) !important;
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary) !important;
   background: var(--bg-primary) !important;
 }
@@ -855,7 +895,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .Input\.module__textareaWrapper___ZGQ3MT .BioEditor\.module__emojiButton___XzMxOW svg {
   display: none;
@@ -879,7 +918,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
   height: 22px;
@@ -912,7 +950,6 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
@@ -930,8 +967,12 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
+  padding: 2px 3px;
+  font-size: 13px;
+  font-weight: normal;
+  position: relative;
   min-width: 75px;
+  min-height: 23px;
   max-height: 23px;
 }
 .Button\.module__button___Yzg1Yz.Button\.module__secondary___Yzg1Yz {
@@ -941,11 +982,9 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
-  top: 1px;
-  left: 1px;
+  transform: translate(1px, 1px);
 }
 * {
   border-radius: 0px !important;
@@ -998,16 +1037,15 @@ button.GuildsLayout\.module__addGuildButtonIcon___XzkwZG:active {
 .ScrollerTrack\.module__track___YzkyYz .ScrollerTrack\.module__thumb___YzkyYz {
   width: 100% !important;
   left: 0;
+  background: var(--bg-secondary);
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
 }
 .ScrollerTrack\.module__track___YzkyYz .ScrollerTrack\.module__thumb___YzkyYz:active {
   border-color: var(--bg-primary) var(--bg-tertiary) var(--bg-tertiary) var(--bg-primary);
   border-style: solid;
   border-width: 2px;
-  background: var(--bg-secondary);
   border-color: var(--bg-tertiary) var(--bg-secondary) var(--bg-secondary) var(--bg-tertiary);
   background: var(--bg-primary);
 }
